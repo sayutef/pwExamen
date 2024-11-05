@@ -1,0 +1,37 @@
+<p>Lista de nombre de pokemones </p>
+
+@if (pokemonResults$ | async; as resultObject) {
+  <ul class="pokemon-list">
+    @for (item of resultObject.results; track item.name) {
+      <li>
+        <app-pokemon-item [pokemonInfo]="item" />
+      </li>
+    }
+  </ul>
+}
+
+@if (errorMessage) {
+  <app-error-message [errorMessage]="errorMessage" />
+}
+
+
+<p>pipesssss</p>
+
+
+
+
+<ul class="pokemon-listU" *ngIf="pokemonResults$ | async as resultObject">
+  <li *ngFor="let item of resultObject.results; trackBy: trackByName">
+    
+    <app-pokemon-item [pokemonInfo]="{ name: (item.name | uppercase), url: item.url }"></app-pokemon-item>
+  </li>
+  <li *ngFor="let item of resultObject.results; trackBy: trackByName">
+    
+    <app-pokemon-item [pokemonInfo]="{ name: (item.name | replaceVowels), url: item.url }"></app-pokemon-item>
+  </li>
+</ul>
+
+
+@if (errorMessage) {
+  <app-error-message [errorMessage]="errorMessage" />
+}

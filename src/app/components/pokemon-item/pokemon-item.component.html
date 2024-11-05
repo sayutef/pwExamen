@@ -1,0 +1,19 @@
+<div class="pokemon-card">
+  <p>{{ pokemonInfo.name }}</p>
+  <p>{{ pokemonInfo.name | titlecase }}</p>
+</div>
+
+<div class="pokemon-card">
+  <p>Nombre en mayúsculas: {{ pokemonInfo.name | uppercase }}</p>
+  <p>Nombre con vocales reemplazadas: {{ pokemonInfo.name | replaceVowels }}</p>
+</div>
+
+<div class="pokemon-card">
+  <a [routerLink]="['details/', getIdFromUrl(pokemonInfo.url)]">{{pokemonInfo.name}}</a>
+</div>
+
+<div class="pokemon-card">
+  <button (click)="toggleFavorite()">
+    {{ isFavorite ? 'Quitar de favoritos' : 'Añadir a favoritos' }}
+  </button>
+</div>

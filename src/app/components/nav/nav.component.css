@@ -1,0 +1,6 @@
+.pokemon-nav {
+  display: flex;
+  justify-content: center;
+  background-color: #e87d7d;
+  font-size: 1.8rem;
+}
