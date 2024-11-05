@@ -1,0 +1,6 @@
+{
+  "routes": [
+    "/",
+    "/error-message"
+  ]
+}
